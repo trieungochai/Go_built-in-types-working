@@ -17,4 +17,12 @@ func main() {
 	*myFirstPointer = 15
 	fmt.Println("x is now", x)
 	fmt.Println("myFirstPointer is", myFirstPointer)
+
+	changeValueOfPointer(&x)
+	fmt.Println("After function call, x is now", x)
+	fmt.Println("myFirstPointer is", myFirstPointer)
+}
+
+func changeValueOfPointer(num *int) {
+	*num = 25
 }
