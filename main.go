@@ -2,27 +2,33 @@ package main
 
 import (
 	"fmt"
+	"sort"
 )
 
 // reference types (pointers, slices, maps, functions, channels)
 // interface types
 
 func main() {
-	x := 10
-	myFirstPointer := &x
+	var animals []string
 
-	fmt.Println("x is", x)
-	fmt.Println("myFirstPointer is", myFirstPointer)
+	animals = append(animals, "dog")
+	animals = append(animals, "cat")
+	animals = append(animals, "frog")
+	animals = append(animals, "fish")
+	animals = append(animals, "pig")
 
-	*myFirstPointer = 15
-	fmt.Println("x is now", x)
-	fmt.Println("myFirstPointer is", myFirstPointer)
+	fmt.Println(animals)
 
-	changeValueOfPointer(&x)
-	fmt.Println("After function call, x is now", x)
-	fmt.Println("myFirstPointer is", myFirstPointer)
-}
+	for _, x := range animals {
+		fmt.Println(x)
+	}
 
-func changeValueOfPointer(num *int) {
-	*num = 25
+	fmt.Println("Element 0 is", animals[0])
+	fmt.Println("First two element are", animals[0:2])
+	fmt.Println("The slice is", len(animals), "elements long")
+	fmt.Println("Is it sorted?", sort.StringsAreSorted(animals))
+
+	sort.Strings(animals)
+	fmt.Println("Is it sorted now?", sort.StringsAreSorted(animals))
+	fmt.Println(animals)
 }
