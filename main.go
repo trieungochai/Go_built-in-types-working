@@ -1,30 +1,20 @@
 package main
 
-import "fmt"
-
-// aggregate types (array, struct)
+import (
+	"fmt"
+)
 
 // reference types (pointers, slices, maps, functions, channels)
 // interface types
 
-type Car struct {
-	NumberOfTires int
-	Luxury        bool
-	BucketSeats   bool
-	Make          string
-	Model         string
-	Year          int
-}
-
 func main() {
-	myCar := Car{
-		NumberOfTires: 4,
-		Luxury:        true,
-		BucketSeats:   true,
-		Make:          "Volvo",
-		Model:         "XC()",
-		Year:          2019,
-	}
+	x := 10
+	myFirstPointer := &x
 
-	fmt.Println("My car is a %d %s %s", myCar.Year, myCar.Make, myCar.Model)
+	fmt.Println("x is", x)
+	fmt.Println("myFirstPointer is", myFirstPointer)
+
+	*myFirstPointer = 15
+	fmt.Println("x is now", x)
+	fmt.Println("myFirstPointer is", myFirstPointer)
 }
