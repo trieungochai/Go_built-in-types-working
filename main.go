@@ -7,14 +7,24 @@ import "fmt"
 // reference types (pointers, slices, maps, functions, channels)
 // interface types
 
+type Car struct {
+	NumberOfTires int
+	Luxury        bool
+	BucketSeats   bool
+	Make          string
+	Model         string
+	Year          int
+}
+
 func main() {
-	var myStrings [3]string
+	myCar := Car{
+		NumberOfTires: 4,
+		Luxury:        true,
+		BucketSeats:   true,
+		Make:          "Volvo",
+		Model:         "XC()",
+		Year:          2019,
+	}
 
-	myStrings[0] = "cat"
-	myStrings[1] = "dog"
-	myStrings[2] = "fish"
-
-	fmt.Println("1st element in array list is", myStrings[0])
-	fmt.Println("2st element in array list is", myStrings[1])
-	fmt.Println("3rd element in array list is", myStrings[2])
+	fmt.Println("My car is a %d %s %s", myCar.Year, myCar.Make, myCar.Model)
 }
