@@ -31,4 +31,20 @@ func main() {
 	sort.Strings(animals)
 	fmt.Println("Is it sorted now?", sort.StringsAreSorted(animals))
 	fmt.Println(animals)
+
+	DeleteFromSlice(animals, 1)
+	fmt.Println(animals)
+}
+
+func DeleteFromSlice(a []string, i int) []string {
+	// copy the last element to index i
+	a[i] = a[len(a)-1]
+
+	// erase the last element by giving it its default empty value
+	a[len(a)-1] = ""
+
+	// truncate the slice by deleting the last element
+	a = a[:len(a)-1]
+
+	return a
 }
