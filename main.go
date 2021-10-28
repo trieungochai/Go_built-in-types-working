@@ -1,33 +1,15 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 // reference types (pointers, slices, maps, functions, channels)
 // interface types
 
 func main() {
-	intMap := make(map[string]int)
+	z := addTwoNumber(1, 2)
+	fmt.Print(z)
+}
 
-	intMap["one"] = 1
-	intMap["two"] = 2
-	intMap["three"] = 3
-	intMap["four"] = 4
-	intMap["five"] = 5
-
-	for key, value := range intMap {
-		fmt.Println(key, value)
-	}
-
-	delete(intMap, "four")
-	// for key, value := range intMap {
-	// 	fmt.Println(key, value)
-	// }
-	el, ok := intMap["four"]
-	if ok {
-		fmt.Println(el, "is in map.")
-	} else {
-		fmt.Println(el, "is not in map.")
-	}
+func addTwoNumber(x, y int) int {
+	return x + y
 }
