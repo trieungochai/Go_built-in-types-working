@@ -6,10 +6,15 @@ import "fmt"
 // interface types
 
 func main() {
-	z := addTwoNumber(1, 2)
-	fmt.Print(z)
+	z := sumMany(1, 2, 3, 4, -5, 21, -100)
+	fmt.Println(z)
 }
 
-func addTwoNumber(x, y int) int {
-	return x + y
+func sumMany(nums ...int) int {
+	total := 0
+	for _, x := range nums {
+		total = total + x
+	}
+
+	return total
 }
